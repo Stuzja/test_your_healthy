@@ -1,0 +1,23 @@
+extension StringExtension on String {
+  String formatDate() {
+    const months = {
+      "01": "янв",
+      "02": "фев",
+      "03": "мар",
+      "04": "апр",
+      "05": "май",
+      "06": "июн",
+      "07": "июл",
+      "08": "авг",
+      "09": "сен",
+      "10": "окт",
+      "11": "ноя",
+      "12": "дек"
+    };
+
+    final parts = split('-');
+    final day = int.parse(parts[2]);
+    final month = months[parts[1]];
+    return "$day $month";
+  }
+}
