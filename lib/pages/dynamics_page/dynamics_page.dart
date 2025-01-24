@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:side_effect_bloc/side_effect_bloc.dart';
 import 'package:test_your_healthy/di/locator.dart';
-import 'package:test_your_healthy/domain/entities/laboratory/laboratory_entity.dart';
 import 'package:test_your_healthy/pages/dynamics_page/bloc/dynamics_bloc.dart';
+import 'package:test_your_healthy/utils/app_colors.dart';
 import 'package:test_your_healthy/utils/app_text_styles.dart';
 import 'package:test_your_healthy/widgets/notifications/text_notification.dart';
 import 'package:test_your_healthy/widgets/tables/laboratory_table/laboratory_table.dart';
@@ -16,8 +16,7 @@ class DynamicsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          getIt<DynamicsBloc>(),
+      create: (context) => getIt<DynamicsBloc>()..add(HandleRefresh()),
       child: BlocSideEffectConsumer<DynamicsBloc, DynamicsBloc, DynamicsState,
           DynamicsCommand>(
         listener: (context, sideEffect) {
@@ -28,46 +27,64 @@ class DynamicsPage extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(
+              scrolledUnderElevation: 0,
               leading: IconButton(
                 icon: const Icon(
                   Icons.arrow_back_ios,
                 ),
-                onPressed: tapOnBack,
+                onPressed: () => BlocProvider.of<DynamicsBloc>(context).add(
+                  const TapNavBack(),
+                ),
               ),
             ),
-            body: SingleChildScrollView(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Dynamics",
-                      style: AppTextStyles.titleStyle,
-                    ),
-                    Text(
-                      "All Period",
-                      style: AppTextStyles.subTitleStyle,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.h),
-                      child: TextNotification(
-                        text:
-                            "Biomarkers were submitted a long time ago and indicate illness.",
-                        buttonText: "Resubmit the markers",
-                        onTapButton: () {},
-                      ),
-                    ),
-                    const LaboratoryTable(
-                      laboratories: [
-                        LaboratoryEntity(
-                          date: "2022-03-05",
-                          lab: "Лаборатория другая",
-                          value: 3.0,
-                        )
+            body: state.map(
+              loading: (value) => Center(
+                child: CircularProgressIndicator(
+                  color: AppColors.buttonNotificationColor,
+                ),
+              ),
+              loaded: (value) => RefreshIndicator(
+                color: AppColors.buttonNotificationColor,
+                onRefresh: () async {
+                  BlocProvider.of<DynamicsBloc>(context).add(
+                    const HandleRefresh(),
+                  );
+                },
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Dynamics",
+                          style: AppTextStyles.titleStyle,
+                        ),
+                        Text(
+                          "All Period",
+                          style: AppTextStyles.subTitleStyle,
+                        ),
+                        ...(state as Loaded).alerts.map(
+                              (e) => Padding(
+                                padding: EdgeInsets.symmetric(vertical: 10.h),
+                                child: TextNotification(
+                                  text: e.message,
+                                  isResubmitLink: e.resubmitLink,
+                                  buttonText: "Resubmit the markers",
+                                  onTapButton: () =>
+                                      BlocProvider.of<DynamicsBloc>(context)
+                                          .add(
+                                    const TapResubmitLink(),
+                                  ),
+                                ),
+                              ),
+                            ),
+                        LaboratoryTable(
+                          laboratories: state.laboratories,
+                        ),
                       ],
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),

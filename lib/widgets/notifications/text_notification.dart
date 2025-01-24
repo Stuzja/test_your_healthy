@@ -7,11 +7,13 @@ class TextNotification extends StatelessWidget {
   final String text;
   final String buttonText;
   final VoidCallback onTapButton;
+  final bool isResubmitLink;
   const TextNotification({
     super.key,
     required this.text,
     required this.buttonText,
     required this.onTapButton,
+    required this.isResubmitLink,
   });
 
   @override
@@ -26,16 +28,18 @@ class TextNotification extends StatelessWidget {
             text,
             style: AppTextStyles.notificationStyle,
           ),
-          SizedBox(height: 15.h),
-          GestureDetector(
-            onTap: onTapButton,
-            child: Text(
-              buttonText,
-              style: AppTextStyles.notificationStyle.copyWith(
-                color: AppColors.buttonNotificationColor,
+          if (isResubmitLink) ...[
+            SizedBox(height: 15.h),
+            GestureDetector(
+              onTap: onTapButton,
+              child: Text(
+                buttonText,
+                style: AppTextStyles.notificationStyle.copyWith(
+                  color: AppColors.buttonNotificationColor,
+                ),
               ),
             ),
-          )
+          ],
         ],
       ),
     );

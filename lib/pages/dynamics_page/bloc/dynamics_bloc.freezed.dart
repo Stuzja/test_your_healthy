@@ -18,33 +18,45 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$DynamicsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() handleRefresh,
+    required TResult Function() tapNavBack,
+    required TResult Function() tapResubmitLink,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? handleRefresh,
+    TResult? Function()? tapNavBack,
+    TResult? Function()? tapResubmitLink,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? handleRefresh,
+    TResult Function()? tapNavBack,
+    TResult Function()? tapResubmitLink,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Started value) started,
+    required TResult Function(HandleRefresh value) handleRefresh,
+    required TResult Function(TapNavBack value) tapNavBack,
+    required TResult Function(TapResubmitLink value) tapResubmitLink,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Started value)? started,
+    TResult? Function(HandleRefresh value)? handleRefresh,
+    TResult? Function(TapNavBack value)? tapNavBack,
+    TResult? Function(TapResubmitLink value)? tapResubmitLink,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Started value)? started,
+    TResult Function(HandleRefresh value)? handleRefresh,
+    TResult Function(TapNavBack value)? tapNavBack,
+    TResult Function(TapResubmitLink value)? tapResubmitLink,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -72,18 +84,18 @@ class _$DynamicsEventCopyWithImpl<$Res, $Val extends DynamicsEvent>
 }
 
 /// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
-      __$$StartedImplCopyWithImpl<$Res>;
+abstract class _$$HandleRefreshImplCopyWith<$Res> {
+  factory _$$HandleRefreshImplCopyWith(
+          _$HandleRefreshImpl value, $Res Function(_$HandleRefreshImpl) then) =
+      __$$HandleRefreshImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$DynamicsEventCopyWithImpl<$Res, _$StartedImpl>
-    implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+class __$$HandleRefreshImplCopyWithImpl<$Res>
+    extends _$DynamicsEventCopyWithImpl<$Res, _$HandleRefreshImpl>
+    implements _$$HandleRefreshImplCopyWith<$Res> {
+  __$$HandleRefreshImplCopyWithImpl(
+      _$HandleRefreshImpl _value, $Res Function(_$HandleRefreshImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of DynamicsEvent
@@ -92,18 +104,18 @@ class __$$StartedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StartedImpl implements Started {
-  const _$StartedImpl();
+class _$HandleRefreshImpl implements HandleRefresh {
+  const _$HandleRefreshImpl();
 
   @override
   String toString() {
-    return 'DynamicsEvent.started()';
+    return 'DynamicsEvent.handleRefresh()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
+        (other.runtimeType == runtimeType && other is _$HandleRefreshImpl);
   }
 
   @override
@@ -112,27 +124,33 @@ class _$StartedImpl implements Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() handleRefresh,
+    required TResult Function() tapNavBack,
+    required TResult Function() tapResubmitLink,
   }) {
-    return started();
+    return handleRefresh();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? handleRefresh,
+    TResult? Function()? tapNavBack,
+    TResult? Function()? tapResubmitLink,
   }) {
-    return started?.call();
+    return handleRefresh?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? handleRefresh,
+    TResult Function()? tapNavBack,
+    TResult Function()? tapResubmitLink,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (handleRefresh != null) {
+      return handleRefresh();
     }
     return orElse();
   }
@@ -140,34 +158,262 @@ class _$StartedImpl implements Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Started value) started,
+    required TResult Function(HandleRefresh value) handleRefresh,
+    required TResult Function(TapNavBack value) tapNavBack,
+    required TResult Function(TapResubmitLink value) tapResubmitLink,
   }) {
-    return started(this);
+    return handleRefresh(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Started value)? started,
+    TResult? Function(HandleRefresh value)? handleRefresh,
+    TResult? Function(TapNavBack value)? tapNavBack,
+    TResult? Function(TapResubmitLink value)? tapResubmitLink,
   }) {
-    return started?.call(this);
+    return handleRefresh?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Started value)? started,
+    TResult Function(HandleRefresh value)? handleRefresh,
+    TResult Function(TapNavBack value)? tapNavBack,
+    TResult Function(TapResubmitLink value)? tapResubmitLink,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (handleRefresh != null) {
+      return handleRefresh(this);
     }
     return orElse();
   }
 }
 
-abstract class Started implements DynamicsEvent {
-  const factory Started() = _$StartedImpl;
+abstract class HandleRefresh implements DynamicsEvent {
+  const factory HandleRefresh() = _$HandleRefreshImpl;
+}
+
+/// @nodoc
+abstract class _$$TapNavBackImplCopyWith<$Res> {
+  factory _$$TapNavBackImplCopyWith(
+          _$TapNavBackImpl value, $Res Function(_$TapNavBackImpl) then) =
+      __$$TapNavBackImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$TapNavBackImplCopyWithImpl<$Res>
+    extends _$DynamicsEventCopyWithImpl<$Res, _$TapNavBackImpl>
+    implements _$$TapNavBackImplCopyWith<$Res> {
+  __$$TapNavBackImplCopyWithImpl(
+      _$TapNavBackImpl _value, $Res Function(_$TapNavBackImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DynamicsEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$TapNavBackImpl implements TapNavBack {
+  const _$TapNavBackImpl();
+
+  @override
+  String toString() {
+    return 'DynamicsEvent.tapNavBack()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$TapNavBackImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() handleRefresh,
+    required TResult Function() tapNavBack,
+    required TResult Function() tapResubmitLink,
+  }) {
+    return tapNavBack();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? handleRefresh,
+    TResult? Function()? tapNavBack,
+    TResult? Function()? tapResubmitLink,
+  }) {
+    return tapNavBack?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? handleRefresh,
+    TResult Function()? tapNavBack,
+    TResult Function()? tapResubmitLink,
+    required TResult orElse(),
+  }) {
+    if (tapNavBack != null) {
+      return tapNavBack();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HandleRefresh value) handleRefresh,
+    required TResult Function(TapNavBack value) tapNavBack,
+    required TResult Function(TapResubmitLink value) tapResubmitLink,
+  }) {
+    return tapNavBack(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HandleRefresh value)? handleRefresh,
+    TResult? Function(TapNavBack value)? tapNavBack,
+    TResult? Function(TapResubmitLink value)? tapResubmitLink,
+  }) {
+    return tapNavBack?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HandleRefresh value)? handleRefresh,
+    TResult Function(TapNavBack value)? tapNavBack,
+    TResult Function(TapResubmitLink value)? tapResubmitLink,
+    required TResult orElse(),
+  }) {
+    if (tapNavBack != null) {
+      return tapNavBack(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TapNavBack implements DynamicsEvent {
+  const factory TapNavBack() = _$TapNavBackImpl;
+}
+
+/// @nodoc
+abstract class _$$TapResubmitLinkImplCopyWith<$Res> {
+  factory _$$TapResubmitLinkImplCopyWith(_$TapResubmitLinkImpl value,
+          $Res Function(_$TapResubmitLinkImpl) then) =
+      __$$TapResubmitLinkImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$TapResubmitLinkImplCopyWithImpl<$Res>
+    extends _$DynamicsEventCopyWithImpl<$Res, _$TapResubmitLinkImpl>
+    implements _$$TapResubmitLinkImplCopyWith<$Res> {
+  __$$TapResubmitLinkImplCopyWithImpl(
+      _$TapResubmitLinkImpl _value, $Res Function(_$TapResubmitLinkImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DynamicsEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$TapResubmitLinkImpl implements TapResubmitLink {
+  const _$TapResubmitLinkImpl();
+
+  @override
+  String toString() {
+    return 'DynamicsEvent.tapResubmitLink()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$TapResubmitLinkImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() handleRefresh,
+    required TResult Function() tapNavBack,
+    required TResult Function() tapResubmitLink,
+  }) {
+    return tapResubmitLink();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? handleRefresh,
+    TResult? Function()? tapNavBack,
+    TResult? Function()? tapResubmitLink,
+  }) {
+    return tapResubmitLink?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? handleRefresh,
+    TResult Function()? tapNavBack,
+    TResult Function()? tapResubmitLink,
+    required TResult orElse(),
+  }) {
+    if (tapResubmitLink != null) {
+      return tapResubmitLink();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HandleRefresh value) handleRefresh,
+    required TResult Function(TapNavBack value) tapNavBack,
+    required TResult Function(TapResubmitLink value) tapResubmitLink,
+  }) {
+    return tapResubmitLink(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HandleRefresh value)? handleRefresh,
+    TResult? Function(TapNavBack value)? tapNavBack,
+    TResult? Function(TapResubmitLink value)? tapResubmitLink,
+  }) {
+    return tapResubmitLink?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HandleRefresh value)? handleRefresh,
+    TResult Function(TapNavBack value)? tapNavBack,
+    TResult Function(TapResubmitLink value)? tapResubmitLink,
+    required TResult orElse(),
+  }) {
+    if (tapResubmitLink != null) {
+      return tapResubmitLink(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TapResubmitLink implements DynamicsEvent {
+  const factory TapResubmitLink() = _$TapResubmitLinkImpl;
 }
 
 /// @nodoc
@@ -330,33 +576,45 @@ abstract class _NavBack implements DynamicsCommand {
 mixin _$DynamicsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(
+            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(
+            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)?
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(
+            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)?
+        loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Loaded value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Loaded value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -384,18 +642,18 @@ class _$DynamicsStateCopyWithImpl<$Res, $Val extends DynamicsState>
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$DynamicsStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$DynamicsStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of DynamicsState
@@ -404,18 +662,18 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
+class _$LoadingImpl implements Loading {
+  const _$LoadingImpl();
 
   @override
   String toString() {
-    return 'DynamicsState.initial()';
+    return 'DynamicsState.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -424,27 +682,36 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(
+            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)
+        loaded,
   }) {
-    return initial();
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(
+            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)?
+        loaded,
   }) {
-    return initial?.call();
+    return loading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(
+            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)?
+        loaded,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    if (loading != null) {
+      return loading();
     }
     return orElse();
   }
@@ -452,32 +719,211 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Loaded value) loaded,
   }) {
-    return initial(this);
+    return loading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
   }) {
-    return initial?.call(this);
+    return loading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Loaded value)? loaded,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (loading != null) {
+      return loading(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initial implements DynamicsState {
-  const factory _Initial() = _$InitialImpl;
+abstract class Loading implements DynamicsState {
+  const factory Loading() = _$LoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadedImplCopyWith<$Res> {
+  factory _$$LoadedImplCopyWith(
+          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+      __$$LoadedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<LaboratoryEntity> laboratories, List<AlertEntity> alerts});
+}
+
+/// @nodoc
+class __$$LoadedImplCopyWithImpl<$Res>
+    extends _$DynamicsStateCopyWithImpl<$Res, _$LoadedImpl>
+    implements _$$LoadedImplCopyWith<$Res> {
+  __$$LoadedImplCopyWithImpl(
+      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DynamicsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? laboratories = null,
+    Object? alerts = null,
+  }) {
+    return _then(_$LoadedImpl(
+      laboratories: null == laboratories
+          ? _value._laboratories
+          : laboratories // ignore: cast_nullable_to_non_nullable
+              as List<LaboratoryEntity>,
+      alerts: null == alerts
+          ? _value._alerts
+          : alerts // ignore: cast_nullable_to_non_nullable
+              as List<AlertEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoadedImpl implements Loaded {
+  const _$LoadedImpl(
+      {required final List<LaboratoryEntity> laboratories,
+      required final List<AlertEntity> alerts})
+      : _laboratories = laboratories,
+        _alerts = alerts;
+
+  final List<LaboratoryEntity> _laboratories;
+  @override
+  List<LaboratoryEntity> get laboratories {
+    if (_laboratories is EqualUnmodifiableListView) return _laboratories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_laboratories);
+  }
+
+  final List<AlertEntity> _alerts;
+  @override
+  List<AlertEntity> get alerts {
+    if (_alerts is EqualUnmodifiableListView) return _alerts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_alerts);
+  }
+
+  @override
+  String toString() {
+    return 'DynamicsState.loaded(laboratories: $laboratories, alerts: $alerts)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadedImpl &&
+            const DeepCollectionEquality()
+                .equals(other._laboratories, _laboratories) &&
+            const DeepCollectionEquality().equals(other._alerts, _alerts));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_laboratories),
+      const DeepCollectionEquality().hash(_alerts));
+
+  /// Create a copy of DynamicsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
+      __$$LoadedImplCopyWithImpl<_$LoadedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(
+            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)
+        loaded,
+  }) {
+    return loaded(laboratories, alerts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(
+            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)?
+        loaded,
+  }) {
+    return loaded?.call(laboratories, alerts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(
+            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)?
+        loaded,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(laboratories, alerts);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Loading value) loading,
+    required TResult Function(Loaded value) loaded,
+  }) {
+    return loaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Loading value)? loading,
+    TResult Function(Loaded value)? loaded,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Loaded implements DynamicsState {
+  const factory Loaded(
+      {required final List<LaboratoryEntity> laboratories,
+      required final List<AlertEntity> alerts}) = _$LoadedImpl;
+
+  List<LaboratoryEntity> get laboratories;
+  List<AlertEntity> get alerts;
+
+  /// Create a copy of DynamicsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
