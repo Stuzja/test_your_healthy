@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test_your_healthy/domain/entities/laboratory/laboratory_entity.dart';
 import 'package:test_your_healthy/utils/app_text_styles.dart';
 import 'package:test_your_healthy/widgets/tables/laboratory_table/laboratory_card.dart';
@@ -16,11 +17,17 @@ class LaboratoryTable extends StatelessWidget {
           children: [
             Text(
               "Дата",
-              style: AppTextStyles.textTableStyle,
+              style: AppTextStyles.textTableStyle.copyWith(
+                fontSize: 12.sp,
+                height: 16.h / 12.sp,
+              ),
             ),
             Text(
               "МЕ/мл",
-              style: AppTextStyles.textTableStyle,
+              style: AppTextStyles.textTableStyle.copyWith(
+                fontSize: 12.sp,
+                height: 16.h / 12.sp,
+              ),
             ),
           ],
         ),

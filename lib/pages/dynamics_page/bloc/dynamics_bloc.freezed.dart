@@ -577,24 +577,24 @@ mixin _$DynamicsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)
+    required TResult Function(List<LaboratoryEntity> laboratories,
+            List<AlertEntity> alerts, List<FlSpot> spots)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(
-            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)?
+    TResult? Function(List<LaboratoryEntity> laboratories,
+            List<AlertEntity> alerts, List<FlSpot> spots)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(
-            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)?
+    TResult Function(List<LaboratoryEntity> laboratories,
+            List<AlertEntity> alerts, List<FlSpot> spots)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -683,8 +683,8 @@ class _$LoadingImpl implements Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)
+    required TResult Function(List<LaboratoryEntity> laboratories,
+            List<AlertEntity> alerts, List<FlSpot> spots)
         loaded,
   }) {
     return loading();
@@ -694,8 +694,8 @@ class _$LoadingImpl implements Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(
-            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)?
+    TResult? Function(List<LaboratoryEntity> laboratories,
+            List<AlertEntity> alerts, List<FlSpot> spots)?
         loaded,
   }) {
     return loading?.call();
@@ -705,8 +705,8 @@ class _$LoadingImpl implements Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(
-            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)?
+    TResult Function(List<LaboratoryEntity> laboratories,
+            List<AlertEntity> alerts, List<FlSpot> spots)?
         loaded,
     required TResult orElse(),
   }) {
@@ -758,7 +758,10 @@ abstract class _$$LoadedImplCopyWith<$Res> {
           _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<LaboratoryEntity> laboratories, List<AlertEntity> alerts});
+  $Res call(
+      {List<LaboratoryEntity> laboratories,
+      List<AlertEntity> alerts,
+      List<FlSpot> spots});
 }
 
 /// @nodoc
@@ -776,6 +779,7 @@ class __$$LoadedImplCopyWithImpl<$Res>
   $Res call({
     Object? laboratories = null,
     Object? alerts = null,
+    Object? spots = null,
   }) {
     return _then(_$LoadedImpl(
       laboratories: null == laboratories
@@ -786,6 +790,10 @@ class __$$LoadedImplCopyWithImpl<$Res>
           ? _value._alerts
           : alerts // ignore: cast_nullable_to_non_nullable
               as List<AlertEntity>,
+      spots: null == spots
+          ? _value._spots
+          : spots // ignore: cast_nullable_to_non_nullable
+              as List<FlSpot>,
     ));
   }
 }
@@ -795,9 +803,11 @@ class __$$LoadedImplCopyWithImpl<$Res>
 class _$LoadedImpl implements Loaded {
   const _$LoadedImpl(
       {required final List<LaboratoryEntity> laboratories,
-      required final List<AlertEntity> alerts})
+      required final List<AlertEntity> alerts,
+      required final List<FlSpot> spots})
       : _laboratories = laboratories,
-        _alerts = alerts;
+        _alerts = alerts,
+        _spots = spots;
 
   final List<LaboratoryEntity> _laboratories;
   @override
@@ -815,9 +825,17 @@ class _$LoadedImpl implements Loaded {
     return EqualUnmodifiableListView(_alerts);
   }
 
+  final List<FlSpot> _spots;
+  @override
+  List<FlSpot> get spots {
+    if (_spots is EqualUnmodifiableListView) return _spots;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_spots);
+  }
+
   @override
   String toString() {
-    return 'DynamicsState.loaded(laboratories: $laboratories, alerts: $alerts)';
+    return 'DynamicsState.loaded(laboratories: $laboratories, alerts: $alerts, spots: $spots)';
   }
 
   @override
@@ -827,14 +845,16 @@ class _$LoadedImpl implements Loaded {
             other is _$LoadedImpl &&
             const DeepCollectionEquality()
                 .equals(other._laboratories, _laboratories) &&
-            const DeepCollectionEquality().equals(other._alerts, _alerts));
+            const DeepCollectionEquality().equals(other._alerts, _alerts) &&
+            const DeepCollectionEquality().equals(other._spots, _spots));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_laboratories),
-      const DeepCollectionEquality().hash(_alerts));
+      const DeepCollectionEquality().hash(_alerts),
+      const DeepCollectionEquality().hash(_spots));
 
   /// Create a copy of DynamicsState
   /// with the given fields replaced by the non-null parameter values.
@@ -848,35 +868,35 @@ class _$LoadedImpl implements Loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)
+    required TResult Function(List<LaboratoryEntity> laboratories,
+            List<AlertEntity> alerts, List<FlSpot> spots)
         loaded,
   }) {
-    return loaded(laboratories, alerts);
+    return loaded(laboratories, alerts, spots);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(
-            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)?
+    TResult? Function(List<LaboratoryEntity> laboratories,
+            List<AlertEntity> alerts, List<FlSpot> spots)?
         loaded,
   }) {
-    return loaded?.call(laboratories, alerts);
+    return loaded?.call(laboratories, alerts, spots);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(
-            List<LaboratoryEntity> laboratories, List<AlertEntity> alerts)?
+    TResult Function(List<LaboratoryEntity> laboratories,
+            List<AlertEntity> alerts, List<FlSpot> spots)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(laboratories, alerts);
+      return loaded(laboratories, alerts, spots);
     }
     return orElse();
   }
@@ -916,10 +936,12 @@ class _$LoadedImpl implements Loaded {
 abstract class Loaded implements DynamicsState {
   const factory Loaded(
       {required final List<LaboratoryEntity> laboratories,
-      required final List<AlertEntity> alerts}) = _$LoadedImpl;
+      required final List<AlertEntity> alerts,
+      required final List<FlSpot> spots}) = _$LoadedImpl;
 
   List<LaboratoryEntity> get laboratories;
   List<AlertEntity> get alerts;
+  List<FlSpot> get spots;
 
   /// Create a copy of DynamicsState
   /// with the given fields replaced by the non-null parameter values.

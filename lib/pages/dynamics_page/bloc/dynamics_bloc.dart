@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:injectable/injectable.dart';
 import "package:freezed_annotation/freezed_annotation.dart";
 import 'package:side_effect_bloc/side_effect_bloc.dart';
@@ -24,11 +25,24 @@ class DynamicsBloc extends Bloc<DynamicsEvent, DynamicsState>
 
   Future<void> _onHandleRefresh(HandleRefresh event, emit) async {
     emit(Loading());
+
     DynamicEntity dynamic = await _laboratoryRepository.fetchDynamic();
+    List<LaboratoryEntity> laboratories = dynamic.dynamics;
+    List<FlSpot> spots = laboratories
+        .map(
+          (e) => FlSpot(
+            DateTime.parse(e.date).millisecondsSinceEpoch.toDouble(),
+            e.value,
+          ),
+        )
+        .toList()
+      ..sort((a, b) => a.x.compareTo(b.x));
+
     emit(
       Loaded(
-        laboratories: dynamic.dynamics,
+        laboratories: laboratories,
         alerts: dynamic.alerts,
+        spots: spots,
       ),
     );
   }

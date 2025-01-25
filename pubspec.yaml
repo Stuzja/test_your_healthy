@@ -46,6 +46,8 @@ dependencies:
   freezed: ^2.5.8
   retrofit: ^4.4.2
   logger: ^2.4.0  # for logging purpose
+  fl_chart: ^0.70.2
+  intl: ^0.20.2
 
 dev_dependencies:
   flutter_test:
@@ -71,50 +73,12 @@ flutter:
   uses-material-design: true
   generate: true
   fonts:
-    - family: TTInterfaces
+    - family: Manrope
       fonts:
-        - asset: assets/fonts/TTInterfaces-Thin.ttf
-          weight: 100
-        - asset: assets/fonts/TTInterfaces-ThinItalic.ttf
-          weight: 100
-        - asset: assets/fonts/TTInterfaces-ExtraLight.ttf
-          weight: 200
-        - asset: assets/fonts/TTInterfaces-ExtraLightItalic.ttf
-          weight: 200
-        - asset: assets/fonts/TTInterfaces-Light.ttf
-          weight: 300
-        - asset: assets/fonts/TTInterfaces-LightItalic.ttf
-          weight: 300
-          style: italic
-        - asset: assets/fonts/TTInterfaces-Regular.ttf
+        - asset: assets/fonts/manrope-regular.ttf
           weight: 400
-        - asset: assets/fonts/TTInterfaces-Italic.ttf
-          weight: 400
-          style: italic
-        - asset: assets/fonts/TTInterfaces-Medium.ttf
+        - asset: assets/fonts/manrope-medium.ttf
           weight: 500
-        - asset: assets/fonts/TTInterfaces-MediumItalic.ttf
-          weight: 500
-          style: italic
-        - asset: assets/fonts/TTInterfaces-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/TTInterfaces-SemiBoldItalic.ttf
-          weight: 600
-          style: italic
-        - asset: assets/fonts/TTInterfaces-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/TTInterfaces-BoldItalic.ttf
-          weight: 700
-          style: italic
-        - asset: assets/fonts/TTInterfaces-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/TTInterfaces-ExtraBoldItalic.ttf
-          weight: 800
-          style: italic
-    - family: HurmeGeometricSans3
-      fonts:
-        - asset: assets/fonts/HurmeGeometricSans3-SemiBold.ttf
-          weight: 600
     - family: Gilroy
       fonts:
         - asset: assets/fonts/Gilroy-Thin.ttf
@@ -162,4 +126,5 @@ flutter:
         - asset: assets/fonts/Gilroy-BlackItalic.ttf
           weight: 900
           style: italic
+          
         

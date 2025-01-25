@@ -6,7 +6,8 @@ import 'package:test_your_healthy/di/locator.dart';
 import 'package:test_your_healthy/pages/dynamics_page/bloc/dynamics_bloc.dart';
 import 'package:test_your_healthy/utils/app_colors.dart';
 import 'package:test_your_healthy/utils/app_text_styles.dart';
-import 'package:test_your_healthy/widgets/notifications/text_notification.dart';
+import 'package:test_your_healthy/widgets/charts/dynamic_chart/dynamic_chart.dart';
+import 'package:test_your_healthy/widgets/notifications/text_notification/text_notification.dart';
 import 'package:test_your_healthy/widgets/tables/laboratory_table/laboratory_table.dart';
 
 class DynamicsPage extends StatelessWidget {
@@ -27,6 +28,7 @@ class DynamicsPage extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(
+              toolbarHeight: 44.h,
               scrolledUnderElevation: 0,
               leading: IconButton(
                 icon: const Icon(
@@ -64,21 +66,26 @@ class DynamicsPage extends StatelessWidget {
                           "All Period",
                           style: AppTextStyles.subTitleStyle,
                         ),
-                        ...(state as Loaded).alerts.map(
-                              (e) => Padding(
-                                padding: EdgeInsets.symmetric(vertical: 10.h),
-                                child: TextNotification(
-                                  text: e.message,
-                                  isResubmitLink: e.resubmitLink,
-                                  buttonText: "Resubmit the markers",
-                                  onTapButton: () =>
-                                      BlocProvider.of<DynamicsBloc>(context)
-                                          .add(
-                                    const TapResubmitLink(),
-                                  ),
-                                ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 20.h),
+                          child: DynamicChart(
+                            spots: (state as Loaded).spots,
+                          ),
+                        ),
+                        ...state.alerts.map(
+                          (e) => Padding(
+                            padding: EdgeInsets.symmetric(vertical: 20.h),
+                            child: TextNotification(
+                              text: e.message,
+                              isResubmitLink: e.resubmitLink,
+                              buttonText: "Resubmit the markers",
+                              onTapButton: () =>
+                                  BlocProvider.of<DynamicsBloc>(context).add(
+                                const TapResubmitLink(),
                               ),
                             ),
+                          ),
+                        ),
                         LaboratoryTable(
                           laboratories: state.laboratories,
                         ),

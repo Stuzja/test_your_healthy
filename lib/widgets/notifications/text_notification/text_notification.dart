@@ -20,21 +20,24 @@ class TextNotification extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: AppColors.backgroundNotificationColor,
-      padding: EdgeInsets.all(15.r),
+      padding: EdgeInsets.symmetric(
+        vertical: 16.h,
+        horizontal: 20.w,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             text,
-            style: AppTextStyles.notificationStyle,
+            style: AppTextStyles.notificationTextStyle,
           ),
           if (isResubmitLink) ...[
-            SizedBox(height: 15.h),
+            SizedBox(height: 12.h),
             GestureDetector(
               onTap: onTapButton,
               child: Text(
                 buttonText,
-                style: AppTextStyles.notificationStyle.copyWith(
+                style: AppTextStyles.notificationTextStyle.copyWith(
                   color: AppColors.buttonNotificationColor,
                 ),
               ),

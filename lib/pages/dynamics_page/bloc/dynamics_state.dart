@@ -6,5 +6,6 @@ class DynamicsState with _$DynamicsState {
   const factory DynamicsState.loaded({
     required List<LaboratoryEntity> laboratories,
     required List<AlertEntity> alerts,
+    required List<FlSpot> spots,
   }) = Loaded;
 }

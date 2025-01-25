@@ -11,4 +11,8 @@ class AppColors {
   static Color tableColor = const Color.fromRGBO(170, 170, 170, 1);
   static Color greenAnalysesColor = const Color.fromRGBO(49, 160, 120, 1);
   static Color yellowAnalysesColor = const Color.fromRGBO(249, 165, 0, 1);
+  static Color chartLineColor = const Color.fromRGBO(52, 154, 113, 1);
+  static Color chartAreaColor = const Color.fromRGBO(233, 242, 227, 1);
+  static Color chartBackgroundColor = const Color.fromRGBO(246, 249, 246, 1);
+  static Color chartTextColor = const Color.fromRGBO(194, 194, 194, 1);
 }

@@ -20,17 +20,17 @@ class LaboratoryCard extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 15.h),
+          padding: EdgeInsets.symmetric(vertical: 23.h),
           child: Row(
             children: [
               Text(
                 date.formatDate(),
                 style: AppTextStyles.titleStyle.copyWith(
-                  fontSize: 25.sp,
-                  height: 30.h / 25.sp,
+                  fontSize: 24.sp,
+                  height: 26.h / 24.sp,
                 ),
               ),
-              SizedBox(width: 10.w),
+              SizedBox(width: 11.w),
               Text(
                 laboratoryName,
                 style: AppTextStyles.textTableStyle,
@@ -39,8 +39,8 @@ class LaboratoryCard extends StatelessWidget {
               Text(
                 value.toString(),
                 style: AppTextStyles.titleStyle.copyWith(
-                  fontSize: 25.sp,
-                  height: 30.h / 25.sp,
+                  fontSize: 28.sp,
+                  height: 32.h / 28.sp,
                   color: value >= 2.8
                       ? AppColors.greenAnalysesColor
                       : AppColors.yellowAnalysesColor,
